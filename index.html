@@ -36,13 +36,8 @@
         animation: float 3s ease-in-out infinite;
       }
       @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
       }
       .card {
         border-radius: 18px;
@@ -69,13 +64,34 @@
         color: white;
         padding: 25px 0;
       }
+      /* Floating WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #1ebe5d;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm fixed-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-sm fixed-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">IndiHome WiFi</a>
         <button
@@ -86,19 +102,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#paket-internet">Paket Internet</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#paket-tv">Paket + TV</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#daftar">Daftar</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#kontak">Kontak</a>
@@ -117,7 +127,8 @@
             <p class="lead">
               Internet cepat, stabil & hemat untuk rumah & bisnis Anda 🚀
             </p>
-            <a href="#daftar" class="cta-btn btn-lg">Daftar Sekarang</a>
+            <a href="https://wa.me/6282123257722?text=Halo,%20saya%20mau%20daftar%20IndiHome"
+               target="_blank" class="cta-btn btn-lg">Daftar via WhatsApp</a>
           </div>
           <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
             <img src="https://img.icons8.com/clouds/500/wifi.png" alt="WiFi" />
@@ -140,7 +151,6 @@
             <p class="text-muted">Benefit: Vidio</p>
           </div>
         </div>
-
         <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
           <div class="card text-center p-3 border border-danger">
             <i class="bi bi-wifi display-4 text-danger"></i>
@@ -149,7 +159,6 @@
             <p class="text-muted">Benefit: Prime Video</p>
           </div>
         </div>
-
         <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
           <div class="card text-center p-3">
             <i class="bi bi-wifi display-4 text-danger"></i>
@@ -158,7 +167,6 @@
             <p class="text-muted">Benefit: Catchplay+</p>
           </div>
         </div>
-
         <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
           <div class="card text-center p-3">
             <i class="bi bi-wifi display-4 text-danger"></i>
@@ -185,7 +193,6 @@
               <p class="text-muted">Benefit: Vidio + Prime Video</p>
             </div>
           </div>
-
           <div class="col-md-3" data-aos="flip-left" data-aos-delay="100">
             <div class="card text-center p-3 border border-danger">
               <i class="bi bi-tv display-4 text-danger"></i>
@@ -194,87 +201,24 @@
               <p class="text-muted">Benefit: Vidio + Prime Video</p>
             </div>
           </div>
-
           <div class="col-md-3" data-aos="flip-left" data-aos-delay="200">
             <div class="card text-center p-3">
               <i class="bi bi-tv display-4 text-danger"></i>
               <h5>150 Mbps</h5>
               <h3 class="fw-bold text-danger">Rp 460.000</h3>
-              <p class="text-muted">
-                Benefit: Disney+ Hotstar + Prime Video + Vidio
-              </p>
+              <p class="text-muted">Benefit: Disney+ Hotstar + Prime Video + Vidio</p>
             </div>
           </div>
-
           <div class="col-md-3" data-aos="flip-left" data-aos-delay="300">
             <div class="card text-center p-3">
               <i class="bi bi-tv display-4 text-danger"></i>
               <h5>200 Mbps</h5>
               <h3 class="fw-bold text-danger">Rp 625.000</h3>
-              <p class="text-muted">
-                Benefit: Netflix + Disney+ Hotstar + Vidio + Prime Video + iFlix
-              </p>
+              <p class="text-muted">Benefit: Netflix + Disney+ Hotstar + Vidio + Prime Video + iFlix</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Form Daftar -->
-    <section id="daftar" class="container py-5">
-      <h2 class="text-center fw-bold mb-4" data-aos="fade-up">
-        Formulir Pendaftaran
-      </h2>
-      <form
-        id="waForm"
-        class="row g-3 shadow p-4 rounded bg-white"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        <div class="col-md-6">
-          <label class="form-label">Nama Lengkap</label>
-          <input type="text" id="nama" class="form-control" required />
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Nomor HP</label>
-          <input type="tel" id="hp" class="form-control" required />
-        </div>
-        <div class="col-12">
-          <label class="form-label">Alamat Lengkap</label>
-          <textarea
-            id="alamat"
-            class="form-control"
-            rows="3"
-            required
-          ></textarea>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Pilih Paket</label>
-          <select id="paket" class="form-select">
-            <option value="50 Mbps Internet Only">50 Mbps Internet Only</option>
-            <option value="75 Mbps Internet Only">75 Mbps Internet Only</option>
-            <option value="150 Mbps Internet Only">
-              150 Mbps Internet Only
-            </option>
-            <option value="200 Mbps Internet Only">
-              200 Mbps Internet Only
-            </option>
-            <option value="50 Mbps Internet + TV">50 Mbps Internet + TV</option>
-            <option value="75 Mbps Internet + TV">75 Mbps Internet + TV</option>
-            <option value="150 Mbps Internet + TV">
-              150 Mbps Internet + TV
-            </option>
-            <option value="200 Mbps Internet + TV">
-              200 Mbps Internet + TV
-            </option>
-          </select>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-danger w-100 btn-lg fw-bold">
-            Kirim via WhatsApp
-          </button>
-        </div>
-      </form>
     </section>
 
     <!-- Kontak -->
@@ -282,14 +226,11 @@
       <div class="container">
         <h2 class="fw-bold mb-3" data-aos="fade-up">Hubungi Kami</h2>
         <p class="fs-5"><i class="bi bi-telephone-fill"></i> 0821-2325-7722</p>
-        <p class="fs-5">
-          <i class="bi bi-envelope-fill"></i> novielaila1002@gmail.com
-        </p>
-        <a
-          href="https://wa.me/6282123257722"
-          class="btn btn-success btn-lg mt-3"
-          ><i class="bi bi-whatsapp"></i> Chat WhatsApp</a
-        >
+        <p class="fs-5"><i class="bi bi-envelope-fill"></i> novielaila1002@gmail.com</p>
+        <a href="https://wa.me/6282123257722" target="_blank"
+           class="btn btn-success btn-lg mt-3">
+          <i class="bi bi-whatsapp"></i> Chat WhatsApp
+        </a>
       </div>
     </section>
 
@@ -298,29 +239,11 @@
       <small>© 2025 Pemasangan IndiHome - Semua Hak Dilindungi</small>
     </footer>
 
-    <script>
-      document
-        .getElementById("waForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          let nama = document.getElementById("nama").value;
-          let hp = document.getElementById("hp").value;
-          let alamat = document.getElementById("alamat").value;
-          let paket = document.getElementById("paket").value;
-
-          let nomorWA = "6282123257722";
-          let pesan =
-            `Halo, saya ingin daftar IndiHome:\n\n` +
-            `Nama: ${nama}\n` +
-            `Nomor HP: ${hp}\n` +
-            `Alamat: ${alamat}\n` +
-            `Paket: ${paket}`;
-          let url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(
-            pesan
-          )}`;
-          window.open(url, "_blank");
-        });
-    </script>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6282123257722?text=Halo,%20saya%20mau%20daftar%20IndiHome"
+       class="whatsapp-float" target="_blank">
+      <i class="bi bi-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
