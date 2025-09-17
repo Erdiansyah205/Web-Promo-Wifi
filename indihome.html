@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemasangan WiFi IndiHome</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">IndiHome WiFi</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-light text-center p-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Pasang WiFi IndiHome</h1>
+      <p class="lead">Internet cepat & stabil untuk rumah dan bisnis Anda</p>
+      <a href="#daftar" class="btn btn-danger btn-lg">Daftar Sekarang</a>
+    </div>
+  </section>
+
+  <!-- Paket -->
+  <section id="paket" class="container py-5">
+    <h2 class="text-center mb-4">Paket Internet</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">20 Mbps</h5>
+            <h4 class="fw-bold">Rp 280.000/bln</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-danger">
+          <div class="card-body text-center">
+            <h5 class="card-title">50 Mbps</h5>
+            <h4 class="fw-bold">Rp 380.000/bln</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">100 Mbps</h5>
+            <h4 class="fw-bold">Rp 580.000/bln</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Daftar -->
+  <section id="daftar" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Formulir Pendaftaran</h2>
+      <form id="waForm" class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nama Lengkap</label>
+          <input type="text" id="nama" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Nomor HP</label>
+          <input type="tel" id="hp" class="form-control" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Alamat Lengkap</label>
+          <textarea id="alamat" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Pilih Paket</label>
+          <select id="paket" class="form-select">
+            <option value="20 Mbps">20 Mbps</option>
+            <option value="50 Mbps">50 Mbps</option>
+            <option value="100 Mbps">100 Mbps</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-danger w-100">Kirim via WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="container py-5 text-center">
+    <h2 class="mb-3">Hubungi Kami</h2>
+    <p>☎️  0821-2325-7722</p>
+    <p>📧 novielaila1002@gmail.com </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-danger text-white text-center p-3">
+    <small>© 2025 Pemasangan IndiHome</small>
+  </footer>
+
+  <script>
+    document.getElementById("waForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let nama = document.getElementById("nama").value;
+      let hp = document.getElementById("hp").value;
+      let alamat = document.getElementById("alamat").value;
+      let paket = document.getElementById("paket").value;
+
+      // Ganti nomor ini dengan nomor WhatsApp Anda (format internasional tanpa +62 jadi 62xxxx)
+      let nomorWA = "6282123257722";
+
+
+      let pesan = `Halo, saya ingin daftar IndiHome:\n\n` +
+                  `Nama: ${nama}\n` +
+                  `Nomor HP: ${hp}\n` +
+                  `Alamat: ${alamat}\n` +
+                  `Paket: ${paket}`;
+
+      let url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
